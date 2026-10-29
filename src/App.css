@@ -200,6 +200,103 @@
   color: var(--blush-rose);
 }
 
+/* Soothing Romantic Music Toggle Pill */
+.music-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFF1F5;
+  border: 1px solid rgba(248, 155, 181, 0.5);
+  border-radius: 20px;
+  padding: 5px 13px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.music-toggle-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #FFE8F0;
+  box-shadow: 0 4px 12px rgba(230, 99, 133, 0.2);
+}
+
+.music-toggle-pill.playing {
+  background: linear-gradient(135deg, #FF8CA3 0%, #E66385 100%);
+  border-color: #E66385;
+  box-shadow: 0 4px 14px rgba(230, 99, 133, 0.35);
+}
+
+.music-pill-icon {
+  font-size: 0.95rem;
+}
+
+.music-pill-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--rose-deep);
+  letter-spacing: 0.02em;
+}
+
+.music-toggle-pill.playing .music-pill-text {
+  color: #FFFFFF;
+}
+
+.act-theme-5 .music-toggle-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.act-theme-5 .music-pill-text {
+  color: var(--blush-rose);
+}
+
+.act-theme-5 .music-toggle-pill.playing {
+  background: var(--blush-rose);
+  border-color: var(--blush-rose);
+}
+
+.act-theme-5 .music-toggle-pill.playing .music-pill-text {
+  color: #2D1424;
+}
+
+/* Sound Wave Bars */
+.music-sound-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 12px;
+}
+
+.music-sound-bars .bar {
+  display: inline-block;
+  width: 2.5px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  animation: soundBarDance 0.8s infinite ease-in-out alternate;
+}
+
+.act-theme-5 .music-toggle-pill.playing .music-sound-bars .bar {
+  background-color: #2D1424;
+}
+
+.music-sound-bars .bar.b1 { height: 5px; animation-delay: 0s; }
+.music-sound-bars .bar.b2 { height: 11px; animation-delay: 0.2s; }
+.music-sound-bars .bar.b3 { height: 7px; animation-delay: 0.4s; }
+
+@keyframes soundBarDance {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1.3); }
+}
+
+@media (max-width: 600px) {
+  .music-pill-text {
+    display: none;
+  }
+  .music-toggle-pill {
+    padding: 6px 10px;
+  }
+}
+
 .act-stepper {
   display: flex;
   align-items: center;

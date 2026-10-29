@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './App.css';
 
 /* ==========================================================================
@@ -248,6 +248,55 @@ const STATIC_DRIFT_ITEMS = Array.from({ length: 14 }).map((_, i) => ({
   symbol: i % 4 === 0 ? '🎀' : i % 4 === 1 ? '🧸' : i % 4 === 2 ? '💗' : '✨'
 }));
 
+// Romantic instrumental chords & melody (Key of G - D - Em - C)
+const CHORD_PROGRESSION = [
+  [196.00, 293.66, 392.00, 493.88, 587.33], // G
+  [185.00, 293.66, 369.99, 440.00, 587.33], // D/F#
+  [164.81, 246.94, 329.63, 392.00, 493.88], // Em
+  [130.81, 196.00, 261.63, 329.63, 392.00]  // C
+];
+const MELODY_NOTES = [
+  587.33, 493.88, 440.00, 392.00, 440.00, 493.88, 587.33, 659.25,
+  587.33, 493.88, 392.00, 440.00, 493.88, 440.00, 392.00, 329.63
+];
+
+// Play a soft soothing acoustic tone with warm decay
+const playTone = (ctx, freq, time, duration = 1.8, gain = 0.08) => {
+  try {
+    const osc = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const noteGain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1300, time);
+    filter.Q.setValueAtTime(1.2, time);
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, time);
+
+    // Subtle soft harmonic overtone for music box / piano warmth
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(freq, time);
+
+    noteGain.gain.setValueAtTime(0.0001, time);
+    noteGain.gain.linearRampToValueAtTime(gain, time + 0.02);
+    noteGain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+
+    osc.connect(filter);
+    osc2.connect(filter);
+    filter.connect(noteGain);
+    noteGain.connect(ctx.destination);
+
+    osc.start(time);
+    osc2.start(time);
+    osc.stop(time + duration);
+    osc2.stop(time + duration);
+  } catch {
+    // Audio context suspended or closed
+  }
+};
+
 export default function App() {
   const [currentAct, setCurrentAct] = useState(1);
   const [activeLetterPage, setActiveLetterPage] = useState(0);
@@ -258,6 +307,105 @@ export default function App() {
   const [hugGiven, setHugGiven] = useState(false);
   const [particles, setParticles] = useState([]);
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100, visible: false });
+  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
+
+  // Background romantic acoustic piano synthesizer
+  const audioCtxRef = useRef(null);
+  const musicTimerRef = useRef(null);
+  const stepCountRef = useRef(0);
+
+  const startMusic = useCallback(() => {
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new AudioContext();
+      }
+      if (audioCtxRef.current.state === 'suspended') {
+        audioCtxRef.current.resume();
+      }
+
+      if (musicTimerRef.current) {
+        return; // already looping
+      }
+
+      // Continuous loop of soothing romantic arpeggios
+      musicTimerRef.current = setInterval(() => {
+        if (!audioCtxRef.current) return;
+        const ctx = audioCtxRef.current;
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+        const now = ctx.currentTime;
+        const step = stepCountRef.current;
+
+        const chordIdx = Math.floor(step / 8) % CHORD_PROGRESSION.length;
+        const noteIdx = step % 5;
+        const chord = CHORD_PROGRESSION[chordIdx];
+        const noteFreq = chord[noteIdx];
+
+        // Pluck arpeggio note
+        playTone(ctx, noteFreq, now, 1.6, 0.07);
+
+        // Every 4 steps, float a high melody note
+        if (step % 4 === 0) {
+          const melIdx = Math.floor(step / 4) % MELODY_NOTES.length;
+          const melFreq = MELODY_NOTES[melIdx];
+          playTone(ctx, melFreq, now + 0.05, 2.2, 0.09);
+        }
+
+        stepCountRef.current = (step + 1) % 64;
+      }, 380);
+    } catch {
+      // Browser blocked initial autoplay until gesture
+    }
+  }, []);
+
+  const pauseMusic = () => {
+    if (musicTimerRef.current) {
+      clearInterval(musicTimerRef.current);
+      musicTimerRef.current = null;
+    }
+    if (audioCtxRef.current && audioCtxRef.current.state === 'running') {
+      audioCtxRef.current.suspend();
+    }
+    setIsMusicPlaying(false);
+  };
+
+  const toggleMusic = (e) => {
+    if (e) e.stopPropagation();
+    if (isMusicPlaying) {
+      pauseMusic();
+    } else {
+      setIsMusicPlaying(true);
+      startMusic();
+    }
+  };
+
+  // Auto-play music immediately on load & resume on any first touch/scroll anywhere
+  useEffect(() => {
+    startMusic();
+
+    const handleAutoStart = () => {
+      startMusic();
+    };
+
+    const unlockEvents = ['click', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
+    unlockEvents.forEach((evt) => {
+      window.addEventListener(evt, handleAutoStart, { passive: true });
+    });
+
+    return () => {
+      unlockEvents.forEach((evt) => {
+        window.removeEventListener(evt, handleAutoStart);
+      });
+      if (musicTimerRef.current) {
+        clearInterval(musicTimerRef.current);
+      }
+      if (audioCtxRef.current) {
+        audioCtxRef.current.close().catch(() => {});
+      }
+    };
+  }, [startMusic]);
 
   // Floating particles generator
   const triggerBurst = (x, y, count = 20, emojiSet = ['💗', '♡', '✨', '🎀', '🧸', '🌷', '💋']) => {
@@ -283,6 +431,9 @@ export default function App() {
   };
 
   const goToAct = (actNum, e) => {
+    if (!isMusicPlaying) {
+      startMusic();
+    }
     if (e && e.clientX) {
       triggerBurst(e.clientX, e.clientY, 16);
     }
@@ -383,6 +534,26 @@ export default function App() {
           <span className="navbar-ribbon">🎀</span>
           <span className="navbar-label">our little universe ♡</span>
         </div>
+
+        {/* Soothing Background Music Toggle Pill */}
+        <button
+          type="button"
+          className={`music-toggle-pill ${isMusicPlaying ? 'playing' : ''}`}
+          onClick={toggleMusic}
+          aria-label={isMusicPlaying ? "Pause romantic song" : "Play romantic song without lyrics"}
+          title={isMusicPlaying ? "Pause music" : "Play soothing romantic music"}
+        >
+          <span className="music-pill-icon">{isMusicPlaying ? "🎵" : "🔇"}</span>
+          <span className="music-pill-text">{isMusicPlaying ? "Music: Playing ♡" : "Music: Tap to Play 🎵"}</span>
+          {isMusicPlaying && (
+            <span className="music-sound-bars" aria-hidden="true">
+              <span className="bar b1" />
+              <span className="bar b2" />
+              <span className="bar b3" />
+            </span>
+          )}
+        </button>
+
         <nav className="act-stepper" aria-label="Story Acts">
           {[1, 2, 3, 4, 5].map((step) => (
             <button
@@ -423,10 +594,18 @@ export default function App() {
             {/* Glowing Interactive Heart Key */}
             <div
               className="threshold-heart-key"
-              onClick={(e) => triggerBurst(e.clientX, e.clientY, 24)}
+              onClick={(e) => {
+                if (!isMusicPlaying) startMusic();
+                triggerBurst(e.clientX, e.clientY, 24);
+              }}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => { if (e.key === 'Enter') triggerBurst(); }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  if (!isMusicPlaying) startMusic();
+                  triggerBurst();
+                }
+              }}
               title="Tap for a gentle pulse ♡"
             >
               <div className="heart-key-halo" />
@@ -461,7 +640,10 @@ export default function App() {
             <button
               type="button"
               className="grand-romantic-btn"
-              onClick={(e) => goToAct(2, e)}
+              onClick={(e) => {
+                if (!isMusicPlaying) startMusic();
+                goToAct(2, e);
+              }}
             >
               <span>{CONFIG.ACT_1.button}</span>
               <span className="btn-sparkle">✨</span>
