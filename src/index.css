@@ -1,0 +1,73 @@
+/* Base Reset & Design Tokens for OUR LITTLE UNIVERSE ♡ */
+:root {
+  --ivory: #FFF9F3;
+  --ivory-warm: #FFF4EB;
+  --blush: #F7DCE3;
+  --blush-light: #FDF2F5;
+  --rose: #EFAFC1;
+  --rose-deep: #D989A0;
+  --rose-glow: rgba(239, 175, 193, 0.45);
+  --deep-berry: #69394F;
+  --berry-dark: #412030;
+  --midnight-berry: #1F101A;
+  --midnight-deep: #140810;
+  --cocoa: #51434A;
+  --cocoa-light: #7E6B74;
+  --muted-gold: #D7B77A;
+  --soft-gold: #F2E2C4;
+  --gold-glow: rgba(215, 183, 122, 0.4);
+  --soft-white: #FFFFFF;
+  
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-handwriting: 'Caveat', 'Brush Script MT', cursive, sans-serif;
+
+  --shadow-soft: 0 8px 30px rgba(105, 57, 79, 0.08);
+  --shadow-medium: 0 16px 40px rgba(105, 57, 79, 0.12);
+  --shadow-deep: 0 24px 60px rgba(65, 32, 48, 0.18);
+  --shadow-glow: 0 0 25px rgba(239, 175, 193, 0.4);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--ivory);
+  color: var(--cocoa);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

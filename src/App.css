@@ -1,0 +1,1527 @@
+/* ==========================================================================
+   OUR LITTLE UNIVERSE ♡ — 5 TO 10 MINUTE IMMERSIVE EXPERIENCE
+   Editorial warmth, scrapbook intimacy, and a breathtaking midnight awe climax
+   ========================================================================== */
+
+:root {
+  --ivory-canvas: #FFFDF9;
+  --ivory-warm: #FFF7EE;
+  --baby-pink: #FFEBF1;
+  --blush-rose: #FFD2DF;
+  --rose-core: #F89BB5;
+  --rose-deep: #E66385;
+  --lavender-mist: #F4EEFB;
+  --warm-cocoa: #524147;
+  --cocoa-subtle: #847279;
+  --gilded-gold: #E2BF7D;
+  --gilded-glow: rgba(226, 191, 125, 0.4);
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-handwriting: 'Caveat', cursive, sans-serif;
+}
+
+/* Master Universe Wrapper */
+.universe-experience {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ivory-canvas);
+  color: var(--warm-cocoa);
+  font-family: var(--font-sans);
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+/* Act-by-Act Ambient Color Transitions */
+.act-theme-1 {
+  background: radial-gradient(circle at 50% 20%, #FFF3F7 0%, #FFFDF9 60%, #FEE8F0 100%);
+}
+
+.act-theme-2 {
+  background: radial-gradient(circle at 50% 25%, #FFF6EE 0%, #FFFDF9 60%, #FDEBF2 100%);
+}
+
+.act-theme-3 {
+  background: radial-gradient(circle at 50% 30%, #FFF4F8 0%, #FFFDF9 55%, #F8E5F0 100%);
+}
+
+.act-theme-4 {
+  background: radial-gradient(circle at 50% 20%, #FBF2FA 0%, #FFFDF9 60%, #FEE5ED 100%);
+}
+
+.act-theme-5 {
+  /* Midnight Velvet Celestial Climax */
+  background: radial-gradient(ellipse at 50% 25%, #2D1424 0%, #1A0B16 60%, #10060E 100%);
+  color: #FFFDF9;
+}
+
+/* Subtle Desktop Floating Cursor Heart */
+.desktop-cursor-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 15px;
+  opacity: 0.8;
+  user-select: none;
+  transition: transform 0.08s ease-out;
+}
+
+@media (max-width: 768px) {
+  .desktop-cursor-heart {
+    display: none;
+  }
+}
+
+/* Ambient Starlight & Drifting Stickers */
+.ambient-celestial-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ambient-sparkle-dot {
+  position: absolute;
+  color: var(--gilded-gold);
+  user-select: none;
+  animation: starBreathe 2.4s infinite alternate ease-in-out;
+}
+
+.act-theme-5 .ambient-sparkle-dot {
+  color: #FFFFFF;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes starBreathe {
+  0% { transform: scale(0.6) rotate(0deg); opacity: 0.25; }
+  100% { transform: scale(1.25) rotate(45deg); opacity: 0.85; }
+}
+
+.ambient-drifter {
+  position: absolute;
+  bottom: -40px;
+  user-select: none;
+  animation: floatDriftUp linear infinite;
+  opacity: 0.5;
+}
+
+.act-theme-5 .ambient-drifter {
+  opacity: 0.25;
+}
+
+@keyframes floatDriftUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.85);
+    opacity: 0;
+  }
+  15% { opacity: 0.55; }
+  85% { opacity: 0.55; }
+  100% {
+    transform: translateY(-110vh) rotate(30deg) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Click Burst Particle Physics */
+.click-burst-item {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+  animation: burstParticleMotion 1.1s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+}
+
+@keyframes burstParticleMotion {
+  0% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--vx)), calc(-50% + var(--vy))) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   EXPERIENCE NAVBAR & PROGRESSION
+   ========================================================================== */
+.experience-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(255, 253, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px dashed rgba(248, 155, 181, 0.35);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+.act-theme-5 .experience-navbar {
+  background: rgba(16, 6, 14, 0.85);
+  border-bottom: 1px solid rgba(248, 155, 181, 0.2);
+}
+
+.navbar-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF1F5;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(248, 155, 181, 0.5);
+  box-shadow: 0 2px 6px rgba(230, 99, 133, 0.1);
+}
+
+.act-theme-5 .navbar-tag {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-ribbon {
+  font-size: 1rem;
+}
+
+.navbar-label {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--rose-deep);
+}
+
+.act-theme-5 .navbar-label {
+  color: var(--blush-rose);
+}
+
+.act-stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.act-pill-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.act-pill-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(248, 155, 181, 0.15);
+}
+
+.act-pill-icon {
+  font-size: 0.95rem;
+}
+
+.act-pill-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cocoa-subtle);
+  letter-spacing: 0.05em;
+}
+
+.act-theme-5 .act-pill-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.act-pill-btn.active {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  box-shadow: 0 4px 12px rgba(230, 99, 133, 0.35);
+}
+
+.act-pill-btn.active .act-pill-text {
+  color: #FFFFFF;
+}
+
+.act-theme-5 .act-pill-btn.active {
+  background: var(--blush-rose);
+  border-color: var(--blush-rose);
+}
+
+.act-theme-5 .act-pill-btn.active .act-pill-text {
+  color: #2D1424;
+}
+
+@media (max-width: 600px) {
+  .act-pill-text {
+    display: none;
+  }
+  .act-pill-btn {
+    padding: 6px;
+  }
+}
+
+/* ==========================================================================
+   STORY CONTAINER & SHARED ACT ELEMENTS
+   ========================================================================== */
+.story-stage {
+  flex: 1;
+  z-index: 10;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.act-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: actFadeIn 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes actFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sacred-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF2F7;
+  border: 1.5px dashed var(--rose-core);
+  padding: 6px 18px;
+  border-radius: 24px;
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  color: var(--rose-deep);
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(248, 155, 181, 0.15);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5.2vw, 2.7rem);
+  font-weight: 600;
+  color: var(--rose-deep);
+  line-height: 1.22;
+  margin-bottom: 10px;
+}
+
+.section-subtext {
+  font-size: 1.05rem;
+  color: var(--cocoa-subtle);
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Grand Romantic Button */
+.grand-romantic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #FF8CA3 0%, #E66385 100%);
+  color: #FFFFFF;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 16px 38px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(230, 99, 133, 0.32), 0 2px 4px rgba(255, 255, 255, 0.6) inset;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-top: 26px;
+}
+
+.grand-romantic-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(230, 99, 133, 0.42);
+}
+
+.grand-romantic-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.btn-sparkle {
+  color: #FFF275;
+}
+
+.act-forward-action {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   ACT I — THE THRESHOLD
+   ========================================================================== */
+.act-1-threshold {
+  padding-top: 10px;
+}
+
+.headphone-whisper {
+  background: rgba(255, 240, 245, 0.8);
+  border: 1px solid rgba(248, 155, 181, 0.5);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  color: var(--rose-deep);
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(248, 155, 181, 0.1);
+}
+
+.threshold-heart-key {
+  position: relative;
+  width: 140px;
+  height: 130px;
+  margin: 10px auto 26px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-key-halo {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.5) 0%, rgba(226, 191, 125, 0.2) 50%, transparent 70%);
+  animation: keyPulse 2.6s infinite ease-in-out;
+}
+
+@keyframes keyPulse {
+  0%, 100% { transform: scale(0.92); opacity: 0.5; }
+  50% { transform: scale(1.28); opacity: 0.9; }
+}
+
+.heart-key-body {
+  position: relative;
+  width: 110px;
+  height: 100px;
+  animation: heartSlowBounce 2s infinite ease-in-out;
+  filter: drop-shadow(0 10px 20px rgba(230, 99, 133, 0.3));
+}
+
+@keyframes heartSlowBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-8px) scale(1.05); }
+  60% { transform: translateY(0) scale(0.98); }
+}
+
+.threshold-heart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.threshold-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  color: #FFFFFF;
+}
+
+.face-eyes {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.face-tag {
+  font-family: var(--font-handwriting);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFF9F3;
+  margin-top: 4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.threshold-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6.5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--rose-deep);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.threshold-headline-accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--warm-cocoa);
+}
+
+.threshold-subtext {
+  font-size: 1.15rem;
+  color: var(--warm-cocoa);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.threshold-signature {
+  margin-top: 36px;
+  font-family: var(--font-handwriting);
+  font-size: 1.3rem;
+  color: var(--cocoa-subtle);
+}
+
+/* ==========================================================================
+   ACT II — THE UNHURRIED LOVE LETTER (3 Pages)
+   ========================================================================== */
+.act-2-letter {
+  width: 100%;
+}
+
+.letter-page-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.letter-tab-btn {
+  background: #FFF5F8;
+  border: 1px solid rgba(248, 155, 181, 0.4);
+  border-radius: 18px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.letter-tab-btn:hover {
+  background: #FFE8F0;
+  transform: translateY(-2px);
+}
+
+.letter-tab-btn.active {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  box-shadow: 0 4px 12px rgba(230, 99, 133, 0.25);
+}
+
+.tab-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cocoa-subtle);
+  text-transform: uppercase;
+}
+
+.letter-tab-btn.active .tab-num {
+  color: #FFE6EE;
+}
+
+.tab-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--warm-cocoa);
+}
+
+.letter-tab-btn.active .tab-title {
+  color: #FFFFFF;
+}
+
+/* Tactile Parchment Paper */
+.parchment-sheet {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 38px 34px 30px;
+  box-shadow: 0 14px 40px rgba(230, 99, 133, 0.14);
+  border: 2px solid #FFE4ED;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+}
+
+.parchment-washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: rgba(248, 155, 181, 0.6);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.parchment-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed #FFE4ED;
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+}
+
+.parchment-stamp {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  background: #FFF0F5;
+  color: var(--rose-deep);
+  padding: 3px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--rose-core);
+}
+
+.parchment-page-indicator {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  color: var(--cocoa-subtle);
+}
+
+.parchment-page-heading {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--rose-deep);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.parchment-salutation {
+  font-family: var(--font-handwriting);
+  font-size: 1.7rem;
+  color: var(--rose-deep);
+  margin-bottom: 14px;
+}
+
+.parchment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.parchment-para {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.68;
+  color: var(--warm-cocoa);
+}
+
+.parchment-margin-note {
+  background: #FFF7EB;
+  border-left: 3px solid var(--gilded-gold);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-pin {
+  font-size: 1rem;
+}
+
+.note-text {
+  font-family: var(--font-handwriting);
+  font-size: 1.25rem;
+  color: var(--rose-deep);
+}
+
+.parchment-page-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed #FFE4ED;
+  padding-top: 18px;
+  margin-top: 24px;
+}
+
+.page-nav-arrow {
+  background: #FFF0F5;
+  border: 1px solid rgba(248, 155, 181, 0.4);
+  color: var(--rose-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-nav-arrow:hover:not(:disabled) {
+  background: var(--rose-deep);
+  color: #FFFFFF;
+}
+
+.page-nav-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-dots-row {
+  display: flex;
+  gap: 6px;
+}
+
+.page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(248, 155, 181, 0.4);
+  transition: all 0.2s ease;
+}
+
+.page-dot.active {
+  width: 22px;
+  border-radius: 12px;
+  background-color: var(--rose-deep);
+}
+
+.letter-final-signoff {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(248, 155, 181, 0.2);
+}
+
+.signoff-closing {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--cocoa-subtle);
+}
+
+.signoff-name {
+  font-family: var(--font-handwriting);
+  font-size: 2.2rem;
+  color: var(--rose-deep);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   ACT III — THE 12-MONTH CONSTELLATION OF US
+   ========================================================================== */
+.act-3-constellation {
+  width: 100%;
+}
+
+.constellation-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 10px auto 20px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 245, 248, 0.95) 0%, rgba(255, 235, 242, 0.6) 70%, transparent 100%);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.constellation-orbit-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 8px 24px rgba(230, 99, 133, 0.16));
+}
+
+.orbit-perimeter-path {
+  fill: none;
+  stroke: url(#orbitGrad);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+  animation: orbitDashPulse 22s linear infinite;
+}
+
+@keyframes orbitDashPulse {
+  to { stroke-dashoffset: -120; }
+}
+
+.orbit-spoke {
+  stroke: rgba(248, 155, 181, 0.25);
+  stroke-width: 1;
+}
+
+.orbit-center-hub {
+  cursor: pointer;
+}
+
+.hub-circle {
+  fill: #FFF0F5;
+  stroke: var(--rose-core);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 2px 8px rgba(248, 155, 181, 0.4));
+}
+
+.hub-text {
+  font-family: var(--font-handwriting);
+  font-size: 11px;
+  fill: var(--rose-deep);
+  font-weight: 700;
+}
+
+/* Star Node Group */
+.star-node-group {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.star-aura {
+  fill: rgba(248, 155, 181, 0.25);
+  animation: starHaloPulse 2.4s infinite ease-in-out;
+}
+
+.star-node-group.selected .star-aura {
+  fill: rgba(226, 191, 125, 0.45);
+  animation: starHaloPulse 1.4s infinite ease-in-out;
+}
+
+@keyframes starHaloPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 0.9; }
+}
+
+.star-nucleus {
+  fill: var(--rose-deep);
+  stroke: #FFFFFF;
+  stroke-width: 1.5;
+  transition: fill 0.2s ease;
+}
+
+.star-node-group:hover .star-nucleus,
+.star-node-group.selected .star-nucleus {
+  fill: var(--gilded-gold);
+}
+
+.star-num-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 800;
+  fill: var(--warm-cocoa);
+  user-select: none;
+}
+
+.month-quick-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.month-pill {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(248, 155, 181, 0.6);
+  color: var(--rose-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.month-pill:hover,
+.month-pill.active {
+  background: var(--rose-deep);
+  color: #FFFFFF;
+  border-color: var(--rose-deep);
+  box-shadow: 0 4px 10px rgba(230, 99, 133, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Modal Overlay for Selected Month */
+.chapter-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(45, 20, 36, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.chapter-modal-card {
+  width: 100%;
+  max-width: 460px;
+  background: #FFFDF9;
+  border-radius: 20px;
+  padding: 30px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--gilded-gold);
+  text-align: center;
+  position: relative;
+  animation: modalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.9) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.modal-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gilded-gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.modal-close-btn {
+  background: rgba(248, 155, 181, 0.2);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--rose-deep);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: var(--rose-deep);
+  color: #FFFFFF;
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--rose-deep);
+  line-height: 1.2;
+}
+
+.modal-heart-divider {
+  color: var(--rose-core);
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.modal-reflection {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--warm-cocoa);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.modal-learned-box {
+  background: #FFF4F7;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--rose-deep);
+  text-align: left;
+}
+
+.learned-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.learned-text {
+  font-family: var(--font-handwriting);
+  font-size: 1.3rem;
+  color: var(--warm-cocoa);
+  line-height: 1.35;
+}
+
+.modal-melody-tag {
+  background: #FFF8EB;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  border: 1px dashed var(--gilded-gold);
+  font-size: 0.85rem;
+  color: #8C6721;
+  font-style: italic;
+}
+
+.modal-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(248, 155, 181, 0.3);
+  padding-top: 16px;
+}
+
+.modal-nav-btn {
+  background: transparent;
+  border: 1px solid rgba(248, 155, 181, 0.6);
+  color: var(--rose-deep);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-nav-btn:hover {
+  background: var(--baby-pink);
+}
+
+.modal-counter {
+  font-size: 0.85rem;
+  color: var(--cocoa-subtle);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ACT IV — LITTLE VULNERABILITIES & SECRET NOTES
+   ========================================================================== */
+.act-4-vulnerabilities {
+  width: 100%;
+}
+
+.vulnerability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 600px) {
+  .vulnerability-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vulnerability-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 24px 22px;
+  text-align: left;
+  border: 1.5px solid #FFDEE7;
+  box-shadow: 0 6px 20px rgba(230, 99, 133, 0.1);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.vulnerability-card:hover,
+.vulnerability-card.expanded {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(230, 99, 133, 0.2);
+  border-color: var(--rose-deep);
+}
+
+.card-top-tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tag-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gilded-gold);
+}
+
+.tag-sparkle {
+  color: var(--rose-core);
+}
+
+.card-heading {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--rose-deep);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.card-body-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--warm-cocoa);
+  margin-bottom: 14px;
+}
+
+.card-whisper-footer {
+  background: #FFF7FA;
+  border-radius: 10px;
+  padding: 8px 12px;
+  border-left: 2px solid var(--rose-core);
+}
+
+.whisper-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.whisper-val {
+  font-family: var(--font-handwriting);
+  font-size: 1.2rem;
+  color: var(--warm-cocoa);
+}
+
+/* Deep Secret Scratch-to-Reveal Wax Seal */
+.secret-prayer-box {
+  width: 100%;
+  max-width: 580px;
+  background: #FFFDF9;
+  border: 2px dashed var(--gilded-gold);
+  border-radius: 20px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 30px rgba(230, 99, 133, 0.12);
+  margin-top: 10px;
+}
+
+.prayer-top-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  color: var(--rose-deep);
+}
+
+.prayer-ribbon {
+  font-size: 1.2rem;
+}
+
+.golden-wax-seal-btn {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F0D49D 0%, #D4AB5E 70%, #99742B 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(153, 116, 43, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.golden-wax-seal-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 28px rgba(153, 116, 43, 0.5);
+}
+
+.seal-emblem {
+  font-size: 1.8rem;
+  color: #FFFFFF;
+}
+
+.seal-label {
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+}
+
+.revealed-prayer-card {
+  animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.prayer-sparkles {
+  color: var(--gilded-gold);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.prayer-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.55rem;
+  color: var(--rose-deep);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.prayer-author {
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  color: var(--cocoa-subtle);
+}
+
+/* ==========================================================================
+   ACT V — THE CELESTIAL CLIMAX (The "Awe" Moment)
+   ========================================================================== */
+.act-5-climax {
+  width: 100%;
+}
+
+.midnight-climax-wrap {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.climax-beat {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  width: 100%;
+}
+
+.climax-beat.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.beat-1 {
+  margin-bottom: 18px;
+}
+
+.midnight-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  color: var(--gilded-gold);
+  margin-bottom: 14px;
+}
+
+.midnight-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.2;
+  text-shadow: 0 0 25px rgba(248, 155, 181, 0.4);
+}
+
+/* Glowing Mascot Centerpiece */
+.climax-luminous-mascot {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 10px auto 24px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.luminous-halo-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 155, 181, 0.7) 0%, rgba(226, 191, 125, 0.3) 50%, transparent 75%);
+  animation: keyPulse 2.4s infinite ease-in-out;
+}
+
+.mascot-svg-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  animation: heartSlowBounce 2.2s infinite ease-in-out;
+  filter: drop-shadow(0 0 25px rgba(248, 155, 181, 0.7));
+}
+
+.mascot-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.climax-grand-hero {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.18;
+  margin-bottom: 22px;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+.climax-prose-card {
+  background: rgba(45, 20, 36, 0.75);
+  border: 1px solid rgba(248, 155, 181, 0.3);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.climax-para {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.68;
+  color: #FFF0F5;
+}
+
+/* Hug Interaction Box */
+.hug-interaction-container {
+  margin: 10px 0 24px;
+  width: 100%;
+}
+
+.hug-special-btn {
+  background: linear-gradient(135deg, #FF6F91 0%, #D84E74 100%);
+  font-size: 1.25rem;
+  padding: 18px 42px;
+  box-shadow: 0 10px 30px rgba(216, 78, 116, 0.5);
+}
+
+.hug-delivered-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed var(--rose-core);
+  border-radius: 20px;
+  padding: 26px 20px;
+  animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.hug-sparkle-row {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.hug-headline {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hug-subnote {
+  font-family: var(--font-handwriting);
+  font-size: 1.35rem;
+  color: var(--blush-rose);
+}
+
+/* Digital Keepsake Certificate Card */
+.keepsake-certificate {
+  position: relative;
+  width: 100%;
+  background: rgba(255, 253, 249, 0.06);
+  border: 1.5px solid var(--gilded-gold);
+  border-radius: 20px;
+  padding: 34px 28px;
+  margin: 20px 0 30px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.cert-border-corner {
+  position: absolute;
+  color: var(--gilded-gold);
+  font-size: 1.2rem;
+}
+
+.cert-border-corner.top-left { top: 10px; left: 12px; }
+.cert-border-corner.top-right { top: 10px; right: 12px; }
+.cert-border-corner.bottom-left { bottom: 10px; left: 12px; }
+.cert-border-corner.bottom-right { bottom: 10px; right: 12px; }
+
+.cert-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gilded-gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cert-names {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.cert-label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--blush-rose);
+  margin-bottom: 12px;
+}
+
+.cert-motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #FFF0F5;
+  margin-bottom: 20px;
+}
+
+.cert-signature-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px dashed rgba(226, 191, 125, 0.35);
+  padding-top: 16px;
+}
+
+.cert-signature-name {
+  font-family: var(--font-handwriting);
+  font-size: 1.7rem;
+  color: var(--gilded-gold);
+}
+
+.replay-row {
+  margin-top: 10px;
+}
+
+.replay-story-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--blush-rose);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 10px 26px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.replay-story-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PERSISTENT FOOTER
+   ========================================================================== */
+.experience-footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--cocoa-subtle);
+  opacity: 0.75;
+  position: relative;
+  z-index: 10;
+}
+
+.act-theme-5 .experience-footer {
+  color: var(--blush-rose);
+  opacity: 0.55;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 600px) {
+  .story-stage {
+    padding: 16px 14px 40px;
+  }
+
+  .parchment-sheet {
+    padding: 28px 18px 22px;
+  }
+
+  .parchment-para {
+    font-size: 1.15rem;
+  }
+
+  .constellation-frame {
+    max-width: 320px;
+    padding: 6px;
+  }
+
+  .chapter-modal-card {
+    padding: 22px 18px;
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+  }
+
+  .modal-reflection {
+    font-size: 1.15rem;
+  }
+
+  .climax-prose-card {
+    padding: 22px 18px;
+  }
+
+  .climax-para {
+    font-size: 1.15rem;
+  }
+
+  .keepsake-certificate {
+    padding: 24px 18px;
+  }
+
+  .cert-names {
+    font-size: 1.8rem;
+  }
+}
