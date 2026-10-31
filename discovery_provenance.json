@@ -1,0 +1,1684 @@
+{
+  "version": "senseforge.provenance.v1",
+  "environment_family": "coupled_oscillators",
+  "base_seed": 42,
+  "eval_seeds": [
+    101,
+    202,
+    303
+  ],
+  "generations_completed": 4,
+  "archive_size": 18,
+  "archive_candidates": [
+    {
+      "candidate_id": "pair_d924cf289ba3",
+      "generation": 3,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_9e8f38e3a340"
+      ],
+      "fitness": {
+        "info_gain": 0.8225142767188559,
+        "baseline_b_diff": 0.8380519167023005,
+        "baseline_c_diff": 0.8213381853982029,
+        "robustness": 5.388799228293618,
+        "simplicity": -14.0,
+        "energy_efficiency": -5.282293062511419,
+        "compute_efficiency": -1.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_d52ef5911094",
+        "data_type": "SERIES",
+        "complexity": 2,
+        "depth": 1,
+        "node_count": 1,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 110,
+        "parent_ids": [
+          "inst_47898d554d14"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER"
+        ],
+        "expression_ast": {
+          "op": "Channel",
+          "channel_idx": 0
+        },
+        "expression_str": "Channel(0)"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_480cc6148af4",
+        "total_duration": 12,
+        "total_energy": 5.282293,
+        "max_magnitude": 0.794657,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 276759,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_f702936c3d79"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE",
+          "MUTATE_DURATION",
+          "SIMPLIFY"
+        ],
+        "actions": [
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.252373,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.790823,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.794657,
+            "duration": 4
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_7049f318e573",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_fb4b9f79569d"
+      ],
+      "fitness": {
+        "info_gain": 0.8379939444820602,
+        "baseline_b_diff": 0.8511579363049694,
+        "baseline_c_diff": 0.8379484615842153,
+        "robustness": 2.848538516620966,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.788325744566313,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_46be6e7b6988",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_9f2fefd4d6db"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_030585526683",
+        "total_duration": 13,
+        "total_energy": 4.788326,
+        "max_magnitude": 0.845966,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_b5ae6336c922"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.845966,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_d203f17cda6f",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_859e8317730a"
+      ],
+      "fitness": {
+        "info_gain": 0.8379939444820602,
+        "baseline_b_diff": 0.8511579363049694,
+        "baseline_c_diff": 0.8379484615842153,
+        "robustness": 2.848538516620966,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.788325744566313,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_ca7b03309b71",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_030e9c613654"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_bff8afa4193b",
+        "total_duration": 13,
+        "total_energy": 4.788326,
+        "max_magnitude": 0.845966,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_8efc511de97b"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.845966,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_9e5ad67953bf",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_030a50cb18f4"
+      ],
+      "fitness": {
+        "info_gain": 0.804268448752579,
+        "baseline_b_diff": 0.8227839486974823,
+        "baseline_c_diff": 0.8032629846364385,
+        "robustness": 5.340255129435989,
+        "simplicity": -15.0,
+        "energy_efficiency": -4.650812597416648,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_20dfaaa6a207",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 110,
+        "parent_ids": [
+          "inst_5dc619aa82cd"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER",
+          "CROSSOVER",
+          "MUTATE_SUBTREE"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_5df94382aa63",
+        "total_duration": 11,
+        "total_energy": 4.650813,
+        "max_magnitude": 0.794657,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 276759,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_ad9c137e5b54"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE",
+          "MUTATE_SWAP_ACTIONS"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.794657,
+            "duration": 3
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.790823,
+            "duration": 4
+          },
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.252373,
+            "duration": 4
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_da148c6f7c60",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_f18ce832d905"
+      ],
+      "fitness": {
+        "info_gain": 0.804268448752579,
+        "baseline_b_diff": 0.8227839486974823,
+        "baseline_c_diff": 0.8032629846364385,
+        "robustness": 5.340255129435989,
+        "simplicity": -15.0,
+        "energy_efficiency": -4.650812597416648,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_57e2b8cf3cef",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 110,
+        "parent_ids": [
+          "inst_dcb2fff1e070"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER",
+          "CROSSOVER",
+          "MUTATE_SUBTREE"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_2f1b883b0c7b",
+        "total_duration": 11,
+        "total_energy": 4.650813,
+        "max_magnitude": 0.794657,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 276759,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_a253ebbc98e1"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE",
+          "MUTATE_SWAP_ACTIONS"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.794657,
+            "duration": 3
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.790823,
+            "duration": 4
+          },
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.252373,
+            "duration": 4
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_05ff6b8bd74a",
+      "generation": 1,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_696043163436"
+      ],
+      "fitness": {
+        "info_gain": 0.8042478582774614,
+        "baseline_b_diff": 0.8227653060071674,
+        "baseline_c_diff": 0.8032422883889826,
+        "robustness": 5.346375247025374,
+        "simplicity": -13.0,
+        "energy_efficiency": -4.650812597416648,
+        "compute_efficiency": -1.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_8893b95eb88d",
+        "data_type": "SERIES",
+        "complexity": 2,
+        "depth": 1,
+        "node_count": 1,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 110,
+        "parent_ids": [
+          "inst_c1d242feaba4"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER"
+        ],
+        "expression_ast": {
+          "op": "Channel",
+          "channel_idx": 0
+        },
+        "expression_str": "Channel(0)"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_a9d6c081c1f0",
+        "total_duration": 11,
+        "total_energy": 4.650813,
+        "max_magnitude": 0.794657,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 276759,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_dd9de3871e51"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.252373,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.790823,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.794657,
+            "duration": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_095851045b5d",
+      "generation": 1,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_6ec4053b2c52"
+      ],
+      "fitness": {
+        "info_gain": 0.8042478582774614,
+        "baseline_b_diff": 0.8227653060071674,
+        "baseline_c_diff": 0.8032422883889826,
+        "robustness": 5.346375247025374,
+        "simplicity": -13.0,
+        "energy_efficiency": -4.650812597416648,
+        "compute_efficiency": -1.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_e3d4bc3f8e37",
+        "data_type": "SERIES",
+        "complexity": 2,
+        "depth": 1,
+        "node_count": 1,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 110,
+        "parent_ids": [
+          "inst_7b52ea3ed0d2"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER"
+        ],
+        "expression_ast": {
+          "op": "Channel",
+          "channel_idx": 0
+        },
+        "expression_str": "Channel(0)"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_8e7c9c7dc5e5",
+        "total_duration": 11,
+        "total_energy": 4.650813,
+        "max_magnitude": 0.794657,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 276759,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_897203bf40c9"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.252373,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.790823,
+            "duration": 4
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.794657,
+            "duration": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_fe700a863045",
+      "generation": 0,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_1155bb84e9ad"
+      ],
+      "fitness": {
+        "info_gain": 0.8381358234161757,
+        "baseline_b_diff": 0.8512882867000893,
+        "baseline_c_diff": 0.8380959531834796,
+        "robustness": 2.7724660779274113,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.3912589187990205,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_67333fba038a",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_b32add57a638"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_98c87f77d7d5",
+        "total_duration": 13,
+        "total_energy": 4.391259,
+        "max_magnitude": 0.730604,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_61064cb2fbb5"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_3f2c95e1845a",
+      "generation": 0,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_941ac95a679f"
+      ],
+      "fitness": {
+        "info_gain": 0.8381358234161757,
+        "baseline_b_diff": 0.8512882867000893,
+        "baseline_c_diff": 0.8380959531834796,
+        "robustness": 2.7724660779274113,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.3912589187990205,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_0f88a430f863",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_5ebe1a623f7b"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_1b5d3b1f8c0e",
+        "total_duration": 13,
+        "total_energy": 4.391259,
+        "max_magnitude": 0.730604,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_7a8c4a242021"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_b9dcca6cae7a",
+      "generation": 1,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_dfce2b3c8300"
+      ],
+      "fitness": {
+        "info_gain": 0.8381358234161757,
+        "baseline_b_diff": 0.8512882867000893,
+        "baseline_c_diff": 0.8380959531834796,
+        "robustness": 2.7724660779274113,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.3912589187990205,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_1007a20d702b",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_652bba0d92da"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_c49813d012fb",
+        "total_duration": 13,
+        "total_energy": 4.391259,
+        "max_magnitude": 0.730604,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_746864295a41"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_d329001604ac",
+      "generation": 0,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_18f29d59670a"
+      ],
+      "fitness": {
+        "info_gain": 0.8381358234161757,
+        "baseline_b_diff": 0.8512882867000893,
+        "baseline_c_diff": 0.8380959531834796,
+        "robustness": 2.7724660779274113,
+        "simplicity": -17.0,
+        "energy_efficiency": -4.3912589187990205,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_47ead5e6c3b2",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_41a4e8529542"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_76977cdb2fe6",
+        "total_duration": 13,
+        "total_energy": 4.391259,
+        "max_magnitude": 0.730604,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 230,
+        "generation_number": 0,
+        "parent_ids": [
+          "probe_c2dab798bd51"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.380782,
+              "duration": 2
+            },
+            "count": 3
+          },
+          {
+            "type": "Repeat",
+            "action": {
+              "type": "Perturb",
+              "channel": 0,
+              "magnitude": 0.730604,
+              "duration": 2
+            },
+            "count": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_68605876ddf0",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_68087c733ee8"
+      ],
+      "fitness": {
+        "info_gain": 0.5337412474366531,
+        "baseline_b_diff": 0.6179447109064331,
+        "baseline_c_diff": 0.5337383299270705,
+        "robustness": 3.6633881396535832,
+        "simplicity": -8.0,
+        "energy_efficiency": -2.3251633600227426,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_267e3ca307ba",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_32db8173671b"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_997c786a6453",
+        "total_duration": 4,
+        "total_energy": 2.325163,
+        "max_magnitude": 0.817837,
+        "num_actions": 2,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 672240,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_ef0d0f22db42"
+        ],
+        "mutation_history": [
+          "CROSSOVER"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.817837,
+            "duration": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_5e8150f12495",
+      "generation": 3,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_ddfa5056f200"
+      ],
+      "fitness": {
+        "info_gain": 0.5337412474366531,
+        "baseline_b_diff": 0.6179447109064331,
+        "baseline_c_diff": 0.5337383299270705,
+        "robustness": 3.6633881396535832,
+        "simplicity": -8.0,
+        "energy_efficiency": -2.3251633600227426,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_f022d1267bf4",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_26fd037b3e6d"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_2bf5a87ecb2d",
+        "total_duration": 4,
+        "total_energy": 2.325163,
+        "max_magnitude": 0.817837,
+        "num_actions": 2,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 672240,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_f8a999d685b4"
+        ],
+        "mutation_history": [
+          "CROSSOVER"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.817837,
+            "duration": 3
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_3b0ca02da0eb",
+      "generation": 1,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_6883b8dbc0ad"
+      ],
+      "fitness": {
+        "info_gain": 0.7822050885073735,
+        "baseline_b_diff": 0.8045387788713994,
+        "baseline_c_diff": 0.7777231772928904,
+        "robustness": 3.6227490470132846,
+        "simplicity": -14.0,
+        "energy_efficiency": -1.672636017790031,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_c4a24a53a5b6",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_16afb8d0bb1b"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_918d72ce480d",
+        "total_duration": 10,
+        "total_energy": 1.672636,
+        "max_magnitude": 0.671824,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 447023,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_f20906df68d6"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.671824,
+            "duration": 3
+          },
+          {
+            "type": "Wait",
+            "steps": 6
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_e1980393459e",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_0c6836547332"
+      ],
+      "fitness": {
+        "info_gain": 0.7822050885073735,
+        "baseline_b_diff": 0.8045387788713994,
+        "baseline_c_diff": 0.7777231772928904,
+        "robustness": 3.6227490470132846,
+        "simplicity": -14.0,
+        "energy_efficiency": -1.672636017790031,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_6fe652b606d4",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_86692f014c0d"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_210583302551",
+        "total_duration": 10,
+        "total_energy": 1.672636,
+        "max_magnitude": 0.671824,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 447023,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_4bf03e87aba9"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.671824,
+            "duration": 3
+          },
+          {
+            "type": "Wait",
+            "steps": 6
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_5addcc70ef29",
+      "generation": 3,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_207150b85697"
+      ],
+      "fitness": {
+        "info_gain": 0.44876289484903314,
+        "baseline_b_diff": 0.5599417536739971,
+        "baseline_c_diff": 0.4487614643519489,
+        "robustness": 3.297183762992837,
+        "simplicity": -7.0,
+        "energy_efficiency": -1.6563062079923916,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_669f1c6c41f2",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_73916880b9f8"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_2bbd63459a04",
+        "total_duration": 3,
+        "total_energy": 1.656306,
+        "max_magnitude": 0.817837,
+        "num_actions": 2,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 672240,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_0a7c688b1a12"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_DURATION"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.817837,
+            "duration": 2
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_aabe36add0fd",
+      "generation": 2,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_2a84c6006e25"
+      ],
+      "fitness": {
+        "info_gain": 0.7821481354317146,
+        "baseline_b_diff": 0.8044876660256536,
+        "baseline_c_diff": 0.7785619849006726,
+        "robustness": 3.7270916566065866,
+        "simplicity": -14.0,
+        "energy_efficiency": -1.3278263221255298,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_e861376217dd",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 0,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_63b3ec529bba"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT"
+        ],
+        "expression_ast": {
+          "op": "Clip",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": [
+            -2.0,
+            2.0
+          ]
+        },
+        "expression_str": "Clip(Channel(0), [-2.0, 2.0])"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_333eeff75e76",
+        "total_duration": 10,
+        "total_energy": 1.327826,
+        "max_magnitude": 0.58001,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 447023,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_bc14f04fe338"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_MAGNITUDE",
+          "MUTATE_MAGNITUDE",
+          "SIMPLIFY"
+        ],
+        "actions": [
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.564439,
+            "duration": 1
+          },
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.58001,
+            "duration": 3
+          },
+          {
+            "type": "Wait",
+            "steps": 6
+          }
+        ]
+      },
+      "evaluation_count": 1
+    },
+    {
+      "candidate_id": "pair_ca0e2d46a47c",
+      "generation": 3,
+      "state": "PROVISIONAL_DISCOVERY",
+      "parent_candidate_ids": [
+        "pair_3784b31d9065"
+      ],
+      "fitness": {
+        "info_gain": 0.5622221862581157,
+        "baseline_b_diff": 0.6155352605989171,
+        "baseline_c_diff": 0.5621905205191352,
+        "robustness": 1.6301467614658893,
+        "simplicity": -12.0,
+        "energy_efficiency": -0.9737296147324478,
+        "compute_efficiency": -2.0,
+        "novelty": 0.0
+      },
+      "instrument": {
+        "dsl_version": "senseforge.dsl.v1",
+        "genome_id": "inst_9c348215b612",
+        "data_type": "SERIES",
+        "complexity": 4,
+        "depth": 2,
+        "node_count": 2,
+        "required_channels": [
+          0
+        ],
+        "max_temporal_lag": 5,
+        "generation_seed": 229,
+        "parent_ids": [
+          "inst_9f0417b87a8c"
+        ],
+        "mutation_history": [
+          "RANDOM_INIT",
+          "CROSSOVER"
+        ],
+        "expression_ast": {
+          "op": "RollingMean",
+          "child": {
+            "op": "Channel",
+            "channel_idx": 0
+          },
+          "param": 5
+        },
+        "expression_str": "RollingMean(Channel(0), 5)"
+      },
+      "probe": {
+        "probe_version": "senseforge.probe.v1",
+        "genome_id": "probe_4e364225b3d4",
+        "total_duration": 8,
+        "total_energy": 0.97373,
+        "max_magnitude": 0.845966,
+        "num_actions": 3,
+        "target_channels": [
+          0
+        ],
+        "reproducibility_seed": 318723,
+        "generation_number": 1,
+        "parent_ids": [
+          "probe_dae2467ffbe1"
+        ],
+        "mutation_history": [
+          "CROSSOVER",
+          "MUTATE_INSERT_ACTION",
+          "SIMPLIFY"
+        ],
+        "actions": [
+          {
+            "type": "Perturb",
+            "channel": 0,
+            "magnitude": 0.238252,
+            "duration": 2
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.845966,
+            "duration": 1
+          },
+          {
+            "type": "ReversePerturb",
+            "channel": 0,
+            "magnitude": 0.170025,
+            "duration": 5
+          }
+        ]
+      },
+      "evaluation_count": 1
+    }
+  ],
+  "rejected_count": 29,
+  "history": [
+    {
+      "generation": 0,
+      "best_info_gain": 0.8381358234161757,
+      "mean_info_gain": -1.5337704061108062,
+      "best_diff_random": 0.8380959531834796,
+      "archive_size": 2,
+      "provisional_discoveries": 2,
+      "rejected_count": 10
+    },
+    {
+      "generation": 1,
+      "best_info_gain": 0.8381358234161757,
+      "mean_info_gain": -1.0614396171985678,
+      "best_diff_random": 0.8380959531834796,
+      "archive_size": 6,
+      "provisional_discoveries": 4,
+      "rejected_count": 8
+    },
+    {
+      "generation": 2,
+      "best_info_gain": 0.8381358234161757,
+      "mean_info_gain": -0.3847716211413319,
+      "best_diff_random": 0.8380959531834796,
+      "archive_size": 12,
+      "provisional_discoveries": 7,
+      "rejected_count": 5
+    },
+    {
+      "generation": 3,
+      "best_info_gain": 0.8379939444820602,
+      "mean_info_gain": -0.6658747501252252,
+      "best_diff_random": 0.8379484615842153,
+      "archive_size": 18,
+      "provisional_discoveries": 6,
+      "rejected_count": 6
+    }
+  ]
+}

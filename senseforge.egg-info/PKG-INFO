@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: senseforge
+Version: 0.1.0
+Summary: Autonomous Invention of Measurement Mechanisms
+Author: SENSEFORGE Principal Research Architecture Group
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: scikit-learn>=1.2.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.20.0
+Requires-Dist: websockets>=11.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+
+# SENSEFORGE
+
+**Experimental Computational Science & Artificial Intelligence Research**  
+*Autonomous Invention of Measurement Mechanisms*
+
+## System Overview
+
+SENSEFORGE is a self-contained computational research system that generates artificial dynamical environments and autonomously invents new mathematical measurement operators and active experimental probes to reveal hidden dynamics unresolvable within its primitive observation vocabulary.
+
+## Architecture
+
+1. **M01 — WORLDFOUNDRY:** Procedural environment generator for coupled non-linear oscillators, reaction-diffusion fields, and thermodynamic particulate swarms.
+2. **M02 — OBSERVATION FIREWALL:** Cryptographic information boundary preventing hidden-state leakage.
+3. **M03 — INSTRUMENT GENOME:** Typed mathematical expression grammar over temporal observation histories.
+4. **M04 — PROBE DESIGNER:** Active experimental perturbation planning.
+5. **M05 — DISCOVERY FORGE:** Multi-objective evolutionary synthesis (NSGA-II / Pareto optimization).
+6. **M06 — FALSIFICATION CHAMBER:** Held-out seed evaluation, permutation null-tests, and baseline comparisons.
+7. **M07 — TRANSFER LAB:** Cross-family generalization and invariance testing.
+8. **M08 — DISCOVERY LEDGER:** SQLite provenance ledger recording every experiment.
+9. **M09 — RESEARCH OBSERVATORY:** Interactive scientific instrumentation UI (React + TypeScript + WebGL2).
+
+## Quickstart
+
+```bash
+# Install package in development mode
+pip install -e .
+
+# Run complete test suite
+pytest tests -v
+
+# Run Milestone 1 verification
+python scripts/milestone_01_verify.py
+```

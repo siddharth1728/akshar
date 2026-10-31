@@ -1,0 +1,17 @@
+[package]
+name = "worldfoundry"
+version = "0.1.0"
+edition = "2021"
+authors = ["SENSEFORGE Principal Research Architecture Group"]
+description = "Deterministic procedural simulation engine and Observation Firewall for SENSEFORGE"
+
+[dependencies]
+rand = "0.8"
+rand_chacha = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+sha2 = "0.10"
+
+[lib]
+name = "worldfoundry"
+crate-type = ["rlib", "cdylib"]
+

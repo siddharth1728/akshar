@@ -1,0 +1,246 @@
+{
+  "senseforge_version": "0.3.0-alpha",
+  "dsl_version": "senseforge.dsl.v1",
+  "probe_version": "senseforge.probe.v1",
+  "candidate_id": "pair_c7335dbdaf66",
+  "freeze_timestamp": 1793418102.160764,
+  "config_hash": "6480dac117df2d7795034432ce95e4f96d8ba493c994fed64ff5c5513d18adbd",
+  "source_family": "coupled_oscillators",
+  "state": "REJECTED",
+  "instrument": {
+    "dsl_version": "senseforge.dsl.v1",
+    "genome_id": "inst_44f84946162d",
+    "data_type": "SERIES",
+    "complexity": 8,
+    "depth": 3,
+    "node_count": 5,
+    "required_channels": [
+      1
+    ],
+    "max_temporal_lag": 0,
+    "generation_seed": 101,
+    "parent_ids": [
+      "inst_01727be2fa61"
+    ],
+    "mutation_history": [
+      "RANDOM_INIT"
+    ],
+    "expression_ast": {
+      "op": "Sub",
+      "left": {
+        "op": "Constant",
+        "value": -0.822686
+      },
+      "right": {
+        "op": "DivSafe",
+        "left": {
+          "op": "Channel",
+          "channel_idx": 1
+        },
+        "right": {
+          "op": "Constant",
+          "value": 1.221983
+        }
+      }
+    },
+    "expression_str": "Sub(Const(-0.8227), DivSafe(Channel(1), Const(1.2220)))"
+  },
+  "probe": {
+    "probe_version": "senseforge.probe.v1",
+    "genome_id": "probe_1b024a28274f",
+    "total_duration": 8,
+    "total_energy": 1.883996,
+    "max_magnitude": 0.83418,
+    "num_actions": 3,
+    "target_channels": [
+      0
+    ],
+    "reproducibility_seed": 202,
+    "generation_number": 0,
+    "parent_ids": [
+      "probe_79fced192457"
+    ],
+    "mutation_history": [
+      "RANDOM_INIT"
+    ],
+    "actions": [
+      {
+        "type": "Wait",
+        "steps": 4
+      },
+      {
+        "type": "Perturb",
+        "channel": 0,
+        "magnitude": 0.83418,
+        "duration": 2
+      },
+      {
+        "type": "ReversePerturb",
+        "channel": 0,
+        "magnitude": 0.496128,
+        "duration": 2
+      }
+    ]
+  },
+  "seeds_partition": {
+    "confirmatory_seeds": [
+      9000,
+      9001,
+      9002,
+      9003,
+      9004,
+      9005,
+      9006,
+      9007,
+      9008,
+      9009,
+      9010,
+      9011,
+      9012,
+      9013,
+      9014,
+      9015,
+      9016,
+      9017,
+      9018,
+      9019,
+      9020,
+      9021,
+      9022,
+      9023,
+      9024,
+      9025,
+      9026,
+      9027,
+      9028,
+      9029,
+      9030,
+      9031,
+      9032,
+      9033,
+      9034
+    ]
+  },
+  "falsification_report": {
+    "status": "REJECTED",
+    "seeds_tested": 35,
+    "reports": {
+      "Baseline A (Passive Control)": {
+        "baseline_name": "Baseline A (Passive Control)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.0005590245148390535,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": -1608.5708243427866,
+        "cohens_d": -1.605044764269329,
+        "p_value": 1.0,
+        "p_value_corrected": 1.0,
+        "ci_95_lower": -1.1220692870932878,
+        "ci_95_upper": -0.6897258794778715,
+        "statistically_significant": false
+      },
+      "Baseline C (Random Ensemble Control)": {
+        "baseline_name": "Baseline C (Random Ensemble Control)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.0005553697730937595,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": -1619.1627939619966,
+        "cohens_d": -1.604992499915514,
+        "p_value": 1.0,
+        "p_value_corrected": 1.0,
+        "ci_95_lower": -1.1220855709887154,
+        "ci_95_upper": -0.6897255487394687,
+        "statistically_significant": false
+      },
+      "Test F (Sham Intervention Control)": {
+        "baseline_name": "Test F (Sham Intervention Control)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.0005590245148390535,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": -1608.5708243427866,
+        "cohens_d": -1.605044764269329,
+        "p_value": 1.0,
+        "p_value_corrected": 1.0,
+        "ci_95_lower": -1.1220692870932878,
+        "ci_95_upper": -0.6897258794778715,
+        "statistically_significant": false
+      },
+      "Test G (Temporal Null Control)": {
+        "baseline_name": "Test G (Temporal Null Control)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.9033341583383855,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": 0.0039061109127652475,
+        "cohens_d": 0.16800763753718825,
+        "p_value": 0.13274740232736804,
+        "p_value_corrected": 0.7964844139642082,
+        "ci_95_lower": -0.004987575604803494,
+        "ci_95_upper": 0.013015649980599005,
+        "statistically_significant": false
+      },
+      "Ablation F (Raw Obs + Evolved Probe)": {
+        "baseline_name": "Ablation F (Raw Obs + Evolved Probe)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.00015364665545106862,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": -5854.9496967061405,
+        "cohens_d": -1.6053262886860715,
+        "p_value": 1.0,
+        "p_value_corrected": 1.0,
+        "ci_95_lower": -1.1227109984152355,
+        "ci_95_upper": -0.6900389716682575,
+        "statistically_significant": false
+      },
+      "Ablation G (Evolved Obs + Random Probe)": {
+        "baseline_name": "Ablation G (Evolved Obs + Random Probe)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.9032650088070696,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": 0.0038298548592894323,
+        "cohens_d": 2.946174424607504,
+        "p_value": 2.9103830456733704e-11,
+        "p_value_corrected": 2.0372681319713593e-10,
+        "ci_95_lower": 0.0030091805094908846,
+        "ci_95_upper": 0.0039480947628778,
+        "statistically_significant": true
+      },
+      "Ablation H3 (Evolved Obs + Passive)": {
+        "baseline_name": "Ablation H3 (Evolved Obs + Passive)",
+        "n_seeds": 35,
+        "mean_baseline_loss": 0.8984091603852934,
+        "mean_candidate_loss": 0.8998056348855652,
+        "skill_score": -0.0015543858481240904,
+        "cohens_d": -2.9412001882925463,
+        "p_value": 1.0,
+        "p_value_corrected": 1.0,
+        "ci_95_lower": -0.0015938584671474473,
+        "ci_95_upper": -0.001214140340215882,
+        "statistically_significant": false
+      }
+    }
+  },
+  "transfer_report": {
+    "reaction_diffusion": {
+      "candidate_id": "pair_c7335dbdaf66",
+      "source_family": "coupled_oscillators",
+      "target_family": "reaction_diffusion",
+      "source_skill": -1608.5708243427866,
+      "target_skill": -21952.536918945658,
+      "transfer_degradation_ratio": 0.0,
+      "p_value": 1.0,
+      "category": "FAILED_TRANSFER",
+      "seeds_evaluated": 20
+    },
+    "thermodynamic_swarm": {
+      "candidate_id": "pair_c7335dbdaf66",
+      "source_family": "coupled_oscillators",
+      "target_family": "thermodynamic_swarm",
+      "source_skill": -1608.5708243427866,
+      "target_skill": -9491.766741214133,
+      "transfer_degradation_ratio": 0.0,
+      "p_value": 1.0,
+      "category": "FAILED_TRANSFER",
+      "seeds_evaluated": 20
+    }
+  },
+  "manifest_signature": "6bd4d1f14bb95bd7f66fdcc1b284d5e01fb610311b73185c4246406d7171bac3"
+}
